@@ -1,0 +1,143 @@
+<!Doctype html>
+<html>
+    <head>
+	    <link rel="stylesheet" href="style.css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+	    <title>
+		    Сайта на Алекс
+		</title>
+		<script>
+			function onAboutMeClicked()
+			{
+				var header = document.getElementById("header");
+				header.innerHTML = "За мен";
+				var leftContent = document.getElementsByClassName("left_content")[0];
+				leftContent.innerHTML = "<img src='me.jpg' width='440' height='440'/>";
+				var middleContent = document.getElementsByClassName("middle_content")[0];
+				middleContent.innerHTML = "<p class='inner-content'>Име: Александър</p><p class='inner-content'>Фамилия: Александров</p><p class='inner-content'>Години: 12</p><p class='inner-content'>Местообитание: София - Българя</p><p class='inner-content'>Дейност: ученик</p>";
+				var rightContent = document.getElementsByClassName("right_content")[0];
+				rightContent.innerHTML = "<p class='inner-content'>Хоби : програмиране</p>";
+				makeContentHeightSame()
+			}
+			function onIndexClicked()
+			{
+				var header = document.getElementById("header");
+				header.innerHTML = "Начало";
+				var leftContent = document.getElementsByClassName("left_content")[0];
+				leftContent.innerHTML = "<p class='inner-content'></p>";
+				var middleContent = document.getElementsByClassName("middle_content")[0];
+				middleContent.innerHTML = "<p class='inner-content'>Това е пробен сайт</p><p class='inner-content'>00000000000000000000000000000</p><p class='inner-content'>уфгоияургхоуияегхяохяоиргухряеугх</p><p class='inner-content'>яеругхяугяоригухяоргуяоргух</p><p class='inner-content'>Дейност: ученик</p>";
+				var rightContent = document.getElementsByClassName("right_content")[0];
+				rightContent.innerHTML = "<p class='inner-content'>Хоби : програмиране</p>";
+				makeContentHeightSame()
+			}
+			function onContactsClicked()
+			{
+				var header = document.getElementById("header");
+				header.innerHTML = "Контакти";
+				var leftContent = document.getElementsByClassName("left_content")[0];
+				leftContent.innerHTML = "<p class='inner-content'>Имам дискорд </p>";
+				var middleContent = document.getElementsByClassName("middle_content")[0];
+				middleContent.innerHTML = "<p class='inner-content'>имам телефон</p><p class='inner-content'>но</p><p class='inner-content'>няма</p><p class='inner-content'>да</p><p class='inner-content'>го</p>";
+				var rightContent = document.getElementsByClassName("right_content")[0];
+				rightContent.innerHTML = "<p class='inner-content'>кажа</p>";
+				makeContentHeightSame()
+			}
+			function onBlogClicked()
+			{
+				var header = document.getElementById("header");
+				header.innerHTML = "Блог";
+				var leftContent = document.getElementsByClassName("left_content")[0];
+				leftContent.innerHTML = "<p class='inner-content'>Гледайте </p>";
+				var middleContent = document.getElementsByClassName("middle_content")[0];
+				middleContent.innerHTML = "<p class='inner-content'>си</p><p class='inner-content'>да</p><p class='inner-content'>вие</p><p class='inner-content'>да</p><p class='inner-content'>си я гледате</p>";
+				var rightContent = document.getElementsByClassName("right_content")[0];
+				rightContent.innerHTML = "<p class='inner-content'>работата</p>";
+				makeContentHeightSame()
+			}
+			function makeContentHeightSame()
+			{
+				leftContent.style.height = auto;
+				middleContent.style.height = auto;
+				rightContent.style.height = auto;
+				var leftContent = document.getElementsByClassName("left_content")[0];
+				var leftContentHeight = leftContent.clientHeight;
+				var middleContent = document.getElementsByClassName("middle_content")[0];
+				var middleContentHeight = middleContent.clientHeight;
+				var rightContent = document.getElementsByClassName("right_content")[0];
+				var rightContentHeight = rightContent.clientHeight;
+				console.log("right content height : "+rightContentHeight);
+				console.log("middle content height : "+middleContentHeight);
+				console.log("left content height : "+leftContentHeight);
+				
+				var maxHeight = leftContentHeight;
+				if(maxHeight < middleContentHeight)
+				{
+					maxHeight = middleContentHeight;
+				}
+				if(maxHeight < rightContentHeight)
+				{
+					maxHeight = rightContentHeight;
+				}
+				maxHeight -= 10;
+				leftContent.style.height = maxHeight+"px";
+				middleContent.style.height = maxHeight+"px";
+				rightContent.style.height = maxHeight+"px";
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1 id="header">Начало</h1>
+		<div class="main_menu">
+			<a id="index" class="menu red_menu menu_margin"
+				onclick="onIndexClicked();">
+			Начало
+			</a>
+			<a id="aboutme" class="menu green_menu menu_margin"
+				onclick="onAboutMeClicked();">
+			За мен
+			</a>
+			<a id="contacts" class="menu blue_menu menu_margin"
+				onclick="onContactsClicked();">
+			Контакти
+			</a>
+			<a id="blog" class="menu yellow_menu"
+				onclick="onBlogClicked();">
+			Блог
+			</a>
+		</div>
+		<div class="content">
+			<div class="left_content">
+				<p>	</p>
+			</div>
+			<div class="middle_content">
+				<p>This is a starter site</p>
+			</div>
+			<div class="right_content">
+				<p> </p>
+			</div>
+		</div>
+		<div class="navbar">
+			<a id="index"
+				onclick="onIndexClicked();">
+			Начало
+			</a>
+			<a id="aboutme"
+				onclick="onAboutMeClicked();">
+			За мен
+			</a>
+			<a id="contacts"
+				onclick="onContactsClicked();">
+			Контакти
+			</a>
+			<a id="blog"
+				onclick="onBlogClicked();">
+			Блог
+			</a>
+		</div>
+	
+	</body>
+</html>
